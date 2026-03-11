@@ -31,9 +31,10 @@ jobs:
           cd client
           npm ci
 
-      - name: Build project
+      - name: Build project (force JS Rollup)
         run: |
           cd client
+          export ROLLUP_SKIP_NODEJS_NATIVE=1
           npm run build
 
       - name: Upload artifact
